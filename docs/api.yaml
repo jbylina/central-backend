@@ -1819,7 +1819,7 @@ paths:
                     description: The verbs the authenticated Actor is allowed to perform
                       server-wide.
                     items:
-                      type: object
+                      type: string
                   preferences:
                     description: The preferences of this user
                     type: object
@@ -3536,7 +3536,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Form'
               example:
-              - projectId: 1
+                projectId: 1
                 xmlFormId: simple
                 name: Simple
                 version: "2.1"
@@ -3797,7 +3797,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Form'
               example:
-              - projectId: 1
+                projectId: 1
                 xmlFormId: simple
                 name: Simple
                 version: "2.1"
@@ -4036,8 +4036,8 @@ paths:
           content:
             application/octet-stream:
               schema:
-                type: object
-              example: (binary data)
+                type: string
+                format: binary
         "304":
           description:  Not Modified
         "403":
@@ -5271,8 +5271,8 @@ paths:
           content:
             application/octet-stream:
               schema:
-                type: object
-              example: (binary data)
+                type: string
+                format: binary
         "304":
           description:  Not Modified
         "403":
@@ -7332,21 +7332,12 @@ paths:
                 description: content version identifier
           content:
             application/octet-stream:
-              example: |
-                (binary data)
+              schema:
+                type: string
+                format: binary
         "403":
           description: Forbidden
           content:
-            application/octet-stream:
-              schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
             application/json:
               schema:
                 $ref: '#/components/schemas/Error403'
@@ -7800,21 +7791,12 @@ paths:
                 description: content version identifier
           content:
             application/octet-stream:
-              example: |
-                (binary data)
+              schema:
+                type: string
+                format: binary
         "403":
           description: Forbidden
           content:
-            application/octet-stream:
-              schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
             application/json:
               schema:
                 $ref: '#/components/schemas/Error403'
@@ -8453,21 +8435,12 @@ paths:
                 type: string
           content:
             application/octet-stream:
-              example: |
-                (binary data)
+              schema:
+                type: string
+                format: binary
         "403":
           description: Forbidden
           content:
-            application/octet-stream:
-              schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
             application/json:
               schema:
                 $ref: '#/components/schemas/Error403'
@@ -9016,7 +8989,7 @@ paths:
                 updatedAt: '2018-03-21T12:45:02.312Z'
                 deletedAt: '2018-03-21T12:45:02.312Z'
                 creatorId: 1
-                conflict: null
+                conflict: soft
                 creator:
                   createdAt: '2018-04-18T23:19:14.802Z'
                   displayName: My Display Name
@@ -9188,7 +9161,7 @@ paths:
                 updatedAt: '2018-03-21T12:45:02.312Z'
                 deletedAt: '2018-03-21T12:45:02.312Z'
                 creatorId: 1
-                conflict: null
+                conflict: soft
                 currentVersion:
                   label: John (88)
                   current: true
@@ -9266,16 +9239,14 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Entity'
+                $ref: '#/components/schemas/Entity'
               example:
                 uuid: uuid:85cb9aff-005e-4edd-9739-dc9c1a829c44
                 createdAt: '2018-01-19T23:58:03.395Z'
                 updatedAt: '2018-03-21T12:45:02.312Z'
                 deletedAt: '2018-03-21T12:45:02.312Z'
                 creatorId: 1
-                conflict: null
+                conflict: soft
                 currentVersion:
                   label: John (88)
                   current: true
@@ -9297,16 +9268,14 @@ paths:
                     label: John (88)
             application/json; extended=true:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/ExtendedEntity'
+                $ref: '#/components/schemas/ExtendedEntity'
               example:
                 uuid: uuid:85cb9aff-005e-4edd-9739-dc9c1a829c44
                 createdAt: '2018-01-19T23:58:03.395Z'
                 updatedAt: '2018-03-21T12:45:02.312Z'
                 deletedAt: '2018-03-21T12:45:02.312Z'
                 creatorId: 1
-                conflict: null
+                conflict: soft
                 creator:
                   createdAt: '2018-04-18T23:19:14.802Z'
                   displayName: My Display Name
@@ -9433,7 +9402,7 @@ paths:
                 updatedAt: '2018-03-21T12:45:02.312Z'
                 deletedAt: '2018-03-21T12:45:02.312Z'
                 creatorId: 1
-                conflict: null
+                conflict: soft
                 currentVersion:
                   label: John (88)
                   current: true
@@ -9613,14 +9582,17 @@ paths:
                   branchId: null
                   trunkVersion: null
                   branchBaseVersion: null
-                  conflict: null
+                  conflict: soft
                   resolved: false
                   lastGoodVersion: true
                   relevantToConflict: false
                   conflictingProperties: null
                   baseDiff: []
                   serverDiff: []
-                  source: "// Similar to Audit.details. This property is experimental and may change in the future."
+                  source:
+                    submission:
+                      instanceId: uuid:85cb9aff-005e-4edd-9739-dc9c1a829c44
+                    event: {}
                   data:
                     firstName: John
                     age: '88'
@@ -9645,14 +9617,17 @@ paths:
                   branchId: null
                   trunkVersion: null
                   branchBaseVersion: null
-                  conflict: null
+                  conflict: soft
                   resolved: false
                   lastGoodVersion: true
                   relevantToConflict: false
                   conflictingProperties: null
                   baseDiff: []
                   serverDiff: []
-                  source: "// Similar to Audit.details. This property is experimental and may change in the future."
+                  source:
+                    submission:
+                      instanceId: uuid:85cb9aff-005e-4edd-9739-dc9c1a829c44
+                    event: {}
                   data:
                     firstName: John
                     age: '88'
@@ -9714,7 +9689,7 @@ paths:
               schema:
                 type: array
                 items:
-                      $ref: '#/components/schemas/EntityDiffValue'
+                  $ref: '#/components/schemas/EntityDiffValue'
               example:
               - - new: John
                   old: Dana
@@ -10515,21 +10490,12 @@ paths:
                 type: string
           content:
             application/octet-stream:
-              example: |
-                (binary data)
+              schema:
+                type: string
+                format: binary
         "403":
           description: Forbidden
           content:
-            application/octet-stream:
-              schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
             application/json:
               schema:
                 $ref: '#/components/schemas/Error403'
@@ -11376,33 +11342,33 @@ paths:
                 '@odata.context': https://your.odk.server/v1/projects/7/datasets/trees.svc/$metadata#Entities
                 value:
                 - __id: uuid:85cb9aff-005e-4edd-9739-dc9c1a829c44
-                  label: 25cm purpleheart                  
-                  geometry: 32.7413996 -117.1394617 53.80000305175781 13.933,
-                  species: purpleheart,
-                  circumference_cm: 2
+                  label: 25cm purpleheart
+                  geometry: '32.7413996 -117.1394617 53.80000305175781 13.933'
+                  species: purpleheart
+                  circumference_cm: '2'
                   __system:
                     createdAt: '2022-12-09T19:41:16.478Z'
                     creatorId: 39
                     creatorName: Tree surveyor
-                    updates: 1,
+                    updates: 1
                     updatedAt: '2023-04-31T19:41:16.478Z'
                     deletedAt: null
                     version: 1
-                    conflict: null
+                    conflict: soft
                 - __id: aeebd746-3b1e-4a24-ba9d-ed6547bd5ff1
                   label: 345cm mora
+                  geometry: '47.722581 18.562111 0 0'
+                  species: mora
+                  circumference_cm: '345'
                   __system:
                     createdAt: '2023-04-09T19:10:16.128Z'
                     creatorId: 39
                     creatorName: Tree surveyor
-                    updates: 1,
+                    updates: 1
                     updatedAt: '2023-04-31T19:41:16.478Z'
                     deletedAt: null
                     version: 2
-                    conflict: null
-                  geometry: 47.722581 18.562111 0 0,
-                  species: mora,
-                  circumference_cm: 345            
+                    conflict: soft
         "403":
           description: Forbidden
           content:
@@ -12162,6 +12128,7 @@ components:
           example: 2018-04-18T23:42:11.406Z
         deletedAt:
           type: string
+          nullable: true
           description: ISO date format
           example: 2018-04-18T23:42:11.406Z
     ActorType:
@@ -12378,10 +12345,12 @@ components:
           example: 2018-04-18T23:42:11.406Z
         updatedAt:
           type: string
+          nullable: true
           description: Timestamp of the last update in ISO date format. `null` when there is only one version of the Entity.
           example: 2018-04-18T23:42:11.406Z
         deletedAt:
           type: string
+          nullable: true
           description: Timestamp of the deletion in ISO date format. `null` if the Entity is not deleted.
           example: 2018-04-18T23:42:11.406Z
         creatorId:
@@ -12390,6 +12359,7 @@ components:
           example: 1
         conflict:
           type: string
+          nullable: true
           description: |-
             Type of the conflict. 
             
@@ -12410,6 +12380,10 @@ components:
           type: boolean
           description: if the version is the latest one
           example: true
+        createdAt:
+          type: string
+          description: ISO date format. The time that the server received this version of the Entity.
+          example: 2018-03-21T12:45:02.312Z
         creatorId:
           type: number
           description: The ID of the Actor (App User, User, or Public Link) that originally created the Entity.
@@ -12420,6 +12394,7 @@ components:
           example: Enketo/3.0.4
         conflictingProperties:
           type: array
+          nullable: true
           description: list of properties updated offline simultaneously.
           items:
             type: string
@@ -12429,18 +12404,22 @@ components:
           example: 2
         baseVersion:
           type: number
+          nullable: true
           description: The version number of the version that was the "base version" of this version.
           example: 1
         branchId:
           type: string
+          nullable: true
           description: The uuid of a branch linking multiple offline entity updates together.
           example: b0e927b6-958a-42f6-8344-1deb37ee9672
         trunkVersion:
           type: number
+          nullable: true
           description: The version number of the last known base server version of an entity, in the case of an offline branch of updates.
           example: 1
         branchBaseVersion:
           type: number
+          nullable: true
           description: The base version of the entity according to the submission. In the case of an offline branch of updates, this may not match the version of the base submission on Central.
           example: 1
     EntitySummary:
@@ -12463,7 +12442,7 @@ components:
         - type: object
           properties:
             currentVersion:
-              $ref: '#/components/schemas/EntityVersionFields'
+              $ref: '#/components/schemas/ExtendedEntityVersionSummary'
             creator:
               $ref: '#/components/schemas/Actor'
     Entity:
@@ -12481,7 +12460,7 @@ components:
             creator:
               $ref: '#/components/schemas/Actor'
             currentVersion:
-              $ref: '#/components/schemas/EntityVersion'
+              $ref: '#/components/schemas/ExtendedEntityVersion'
     EntityVersion:
       allOf: 
         - $ref: '#/components/schemas/EntityVersionFields'
@@ -12518,6 +12497,7 @@ components:
               example: ['name', 'age']
             conflict:
               type: string
+              nullable: true
               description: Type of the conflict if this version causes a conflict; otherwise `null`
               enum:
                 - soft
@@ -12592,13 +12572,21 @@ components:
                   createdAt:
                     type: string
                   creatorId:
-                    type: string
+                    type: number
                   creatorName:
                     type: string
                   updates:
-                    type: string
+                    type: number
                   updatedAt:
                     type: string
+                  deletedAt:
+                    type: string
+                    nullable: true
+                  version:
+                    type: number
+                  conflict:
+                    type: string
+                    nullable: true
               geometry:
                 type: string
               species:
@@ -12780,6 +12768,11 @@ components:
           type: boolean
           example: true
           description: Whether attachment is linked to a Dataset.
+        hash:
+          type: string
+          nullable: true
+          example: 51a93eab3a1974dbffc4c7913fa5a16a
+          description: The MD5 hash of the attachment file, or null if no file is present or the attachment links to a Dataset.
         updatedAt:
           type: string
           example: '2018-03-21T12:45:02.312Z'
@@ -13064,8 +13057,6 @@ components:
         reviewState:
           allOf:
             - $ref: '#/components/schemas/SubmissionReviewState'
-            - type: object
-              properties: {}
           description: The current review state of the submission.
         createdAt:
           type: string
@@ -13077,6 +13068,7 @@ components:
           description: ISO date format. `null` when the Submission is first created, then updated when the Submission's XML data or metadata is updated.
         deletedAt:
           type: string
+          nullable: true
           description: Timestamp of the deletion in ISO date format. `null` if the Submission is not deleted.
           example: 2018-04-18T23:42:11.406Z
         currentVersion:
@@ -13116,6 +13108,11 @@ components:
           type: string
           example: '2018-01-19T23:58:03.395Z'
           description: ISO date format. The time that the server received the `Submission` version.
+        formVersion:
+          type: string
+          nullable: true
+          example: '1.0'
+          description: The version of the form that produced this Submission version. May be null if the form did not declare a version.
         current:
           type: boolean
           example: true
@@ -13142,6 +13139,7 @@ components:
               description: The full details of the `Actor` that submitted this version of the `Submission`.
             formVersion:
               type: string
+              nullable: true
               example: '1.0'
               description: The version of the form the submission version was created against. Only returned with specific Submission Version requests.
     ReviewStateCounts:
@@ -13179,8 +13177,8 @@ components:
           description: Whether the server has the file or not.
     SubmissionReviewState:
       type: string
+      nullable: true
       enum:
-        - 'null'
         - edited
         - hasIssues
         - rejected
@@ -13190,13 +13188,18 @@ components:
       properties:
         new:
           type: string
+          nullable: true
           description: The new value of this node, which can either be a simple string, or JSON string representing a larger structural change to the Submission XML. It can also be null if this field no longer exists in the Submission.
         old:
           type: string
+          nullable: true
           description: The old value of this node, with similar properties to `new`. It can be null if this field did not exist previously.
         path:
           type: array
-          items: {}
+          items:
+            oneOf:
+              - type: string
+              - type: integer
           description: An array representing the path (XPath) in the Submission tree for this node. It does not include the outermost path `data`. For elements that are part of repeat groups, the path element is the node name and the index (starting at 0), e.g. ['child', 2] is the third child.
     Audit:
       type: object
@@ -13218,7 +13221,7 @@ components:
           description: The ID of the permissioning object against which the action was taken.
         details:
           type: object
-          properties: {}
+          additionalProperties: true
           description: Additional details about the action that vary according to the type of action.
         loggedAt:
           type: string
@@ -13234,7 +13237,7 @@ components:
               description: The details of the actor given by `actorId`.
             actee:
               type: object
-              properties: {}
+              additionalProperties: true
               description: The details of the actee given by `acteeId`. Depending on the action type, this could be a number of object types, including an `Actor`, a `Project`, or a `Form`.
     Comment:
       type: object
@@ -13273,8 +13276,8 @@ components:
         - code
       properties:
         code:
-          type: number
-          example: 400
+          type: string
+          example: '400'
         details:
           type: object
           properties: {}
@@ -13288,8 +13291,8 @@ components:
         - code
       properties:
         code:
-          type: number
-          example: 401.2
+          type: string
+          example: '401.2'
         message:
           type: string
           example: Could not authenticate with the provided credentials.
@@ -13299,8 +13302,8 @@ components:
         - code
       properties:
         code:
-          type: number
-          example: 403.1
+          type: string
+          example: '403.1'
         message:
           type: string
           example: The authenticated actor does not have rights to perform that action.
@@ -13310,8 +13313,8 @@ components:
         - code
       properties:
         code:
-          type: number
-          example: 404.1
+          type: string
+          example: '404.1'
         message:
           type: string
           example: Could not find the resource you were looking for.
@@ -13321,8 +13324,8 @@ components:
         - code
       properties:
         code:
-          type: number
-          example: 406.1
+          type: string
+          example: '406.1'
         message:
           type: string
           example: 'Requested format not acceptable; this resource allows: (application/json, json).'
@@ -13332,8 +13335,8 @@ components:
         - code
       properties:
         code:
-          type: number
-          example: 409.1
+          type: string
+          example: '409.1'
         message:
           type: string
           example: A resource already exists with id value(s) of 1.
@@ -13343,8 +13346,8 @@ components:
         - code
       properties:
         code:
-          type: number
-          example: 501.1
+          type: string
+          example: '501.1'
         message:
           type: string
           example: The requested feature $unsupported is not supported by this server.
