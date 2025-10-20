@@ -520,6 +520,9 @@ info:
 
     * **Changed** `GET` Submission Attachemnts listing to return an array of objects containing attachment details rather than an array of filename strings.
   version: ""
+  license:
+    name: Apache License 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
 servers:
 - url: /
 tags:
