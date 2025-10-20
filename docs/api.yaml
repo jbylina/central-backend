@@ -10155,7 +10155,7 @@ paths:
                 <OpenRosaResponse xmlns="http://openrosa.org/http/response" items="0">
                   <message nature="error">The authenticated actor does not have rights to perform that action.</message>
                 </OpenRosaResponse>
-  /v1/projects/{projectId}/datasets/{name}/integrity?id={UUIDs}:
+  /v1/projects/{projectId}/datasets/{name}/integrity:
     get:
       tags:
       - OpenRosa Endpoints
