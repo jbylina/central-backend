@@ -1541,6 +1541,7 @@ paths:
       tags:
         - User Preferences
       summary: Setting a project preference
+      operationId: setProjectPreference
       parameters:
         - name: projectId
           in: path
@@ -1591,6 +1592,7 @@ paths:
       tags:
         - User Preferences
       summary: Deleting a project preference
+      operationId: deleteProjectPreference
       parameters:
         - name: projectId
           in: path
@@ -1630,6 +1632,7 @@ paths:
       tags:
         - User Preferences
       summary: Setting a sitewide preference
+      operationId: setSitePreference
       parameters:
         - name: propertyName
           in: path
@@ -1668,6 +1671,7 @@ paths:
       tags:
         - User Preferences
       summary: Deleting a sitewide preference
+      operationId: deleteSitePreference
       parameters:
         - name: propertyName
           in: path
