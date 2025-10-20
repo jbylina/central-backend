@@ -6544,6 +6544,8 @@ paths:
           type: string
         example: uuid:85cb9aff-005e-4edd-9739-dc9c1a829c44
       responses:
+        "200":
+          description: Provided for completeness; Central immediately redirects clients rather than returning a response body.
         "302":
           description: Found
           headers:
