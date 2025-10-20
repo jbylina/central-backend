@@ -2949,17 +2949,7 @@ paths:
           content:
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "409.1"
-                message: A resource already exists with id value(s) of 1.
+                $ref: '#/components/schemas/Error409'
       x-codegen-request-body-name: body
   /v1/projects/{projectId}/assignments:
     get:
@@ -3511,17 +3501,7 @@ paths:
           content:
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "409.1"
-                message: A resource already exists with id value(s) of 1.
+                $ref: '#/components/schemas/Error409'
   /v1/projects/{projectId}/forms/{xmlFormId}:
     get:
       tags:
@@ -4909,17 +4889,7 @@ paths:
           content:
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "409.1"
-                message: A resource already exists with id value(s) of 1.
+                $ref: '#/components/schemas/Error409'
   /v1/projects/{projectId}/forms/{xmlFormId}/versions:
     get:
       tags:
@@ -6126,17 +6096,7 @@ paths:
           content:
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "409.1"
-                message: A resource already exists with id value(s) of 1.
+                $ref: '#/components/schemas/Error409'
   /v1/projects/{projectId}/forms/{xmlFormId}/submissions/{instanceId}:
     get:
       tags:
@@ -6331,17 +6291,7 @@ paths:
           content:
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "409.1"
-                message: A resource already exists with id value(s) of 1.
+                $ref: '#/components/schemas/Error409'
     patch:
       tags:
       - Submissions
@@ -8105,17 +8055,7 @@ paths:
           content:
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "409.1"
-                message: A resource already exists with id value(s) of 1.
+                $ref: '#/components/schemas/Error409'
   /v1/projects/{projectId}/forms/{xmlFormId}/draft/submissions.csv.zip:
     get:
       tags:
@@ -8749,17 +8689,7 @@ paths:
           content:
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: number
-                  message:
-                    type: string
-              example:
-                code: 409.3
-                message: A resource already exists with name,projectId value(s) of trees,1.
+                $ref: '#/components/schemas/Error409'
   /v1/projects/{projectId}/datasets/{name}:
     get:
       tags:
@@ -10709,14 +10639,7 @@ paths:
           content:
             application/json; charset=utf-8; odata.metadata=minimal:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
+                $ref: '#/components/schemas/Error403'
             application/json:
               schema:
                 $ref: '#/components/schemas/Error403'
@@ -10725,28 +10648,10 @@ paths:
           content:
             application/json; charset=utf-8; odata.metadata=minimal:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
+                $ref: '#/components/schemas/Error406'
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "406.1"
-                message: 'Requested format not acceptable; this resource allows: (application/json,
-                  json).'
+                $ref: '#/components/schemas/Error406'
   /v1/projects/{projectId}/forms/{xmlFormId}.svc/$metadata:
     get:
       tags:
@@ -10848,14 +10753,7 @@ paths:
           content:
             application/xml:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
+                $ref: '#/components/schemas/Error403'
             application/json:
               schema:
                 $ref: '#/components/schemas/Error403'
@@ -10864,28 +10762,10 @@ paths:
           content:
             application/xml:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
+                $ref: '#/components/schemas/Error406'
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "406.1"
-                message: 'Requested format not acceptable; this resource allows: (application/json,
-                  json).'
+                $ref: '#/components/schemas/Error406'
   /v1/projects/{projectId}/forms/{xmlFormId}.svc/{table}:
     get:
       tags:
@@ -11085,35 +10965,13 @@ paths:
           content:
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "406.1"
-                message: 'Requested format not acceptable; this resource allows: (application/json,
-                  json).'
+                $ref: '#/components/schemas/Error406'
         "501":
           description: Not Implemented
           content:
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "501.1"
-                message: The requested feature $unsupported is not supported by this
-                  server.
+                $ref: '#/components/schemas/Error501'
   /dl/projects{projectId}/forms/{xmlFormId}/submissions/{instanceId}/attachments/{filename}:
     get:
       tags:
@@ -11282,18 +11140,7 @@ paths:
           content:
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "406.1"
-                message: 'Requested format not acceptable; this resource allows: (application/json,
-                  json).'
+                $ref: '#/components/schemas/Error406'
   /v1/projects/{projectId}/datasets/{name}.svc/$metadata:
     get:
       tags:
@@ -11402,14 +11249,7 @@ paths:
           content:
             application/xml:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
+                $ref: '#/components/schemas/Error403'
             application/json:
               schema:
                 $ref: '#/components/schemas/Error403'
@@ -11418,28 +11258,10 @@ paths:
           content:
             application/xml:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
+                $ref: '#/components/schemas/Error406'
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "406.1"
-                message: 'Requested format not acceptable; this resource allows: (application/json,
-                  json).'
+                $ref: '#/components/schemas/Error406'
   /v1/projects/{projectId}/datasets/{name}.svc/Entities:
     get:
       tags:
@@ -11592,35 +11414,13 @@ paths:
           content:
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "406.1"
-                message: 'Requested format not acceptable; this resource allows: (application/json,
-                  json).'
+                $ref: '#/components/schemas/Error406'
         "501":
           description: Not Implemented
           content:
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "501.1"
-                message: The requested feature $unsupported is not supported by this
-                  server.
+                $ref: '#/components/schemas/Error501'
   /v1/projects/{projectId}/forms/{xmlFormId}/draft.svc:
     get:
       tags:
@@ -11723,14 +11523,7 @@ paths:
           content:
             application/json; charset=utf-8; odata.metadata=minimal:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
+                $ref: '#/components/schemas/Error403'
             application/json:
               schema:
                 $ref: '#/components/schemas/Error403'
@@ -11739,28 +11532,10 @@ paths:
           content:
             application/json; charset=utf-8; odata.metadata=minimal:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
+                $ref: '#/components/schemas/Error406'
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "406.1"
-                message: 'Requested format not acceptable; this resource allows: (application/json,
-                  json).'
+                $ref: '#/components/schemas/Error406'
   /v1/projects/{projectId}/forms/{xmlFormId}/draft.svc/$metadata:
     get:
       tags:
@@ -11850,14 +11625,7 @@ paths:
           content:
             application/xml:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
+                $ref: '#/components/schemas/Error403'
             application/json:
               schema:
                 $ref: '#/components/schemas/Error403'
@@ -11866,28 +11634,10 @@ paths:
           content:
             application/xml:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
+                $ref: '#/components/schemas/Error406'
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "406.1"
-                message: 'Requested format not acceptable; this resource allows: (application/json,
-                  json).'
+                $ref: '#/components/schemas/Error406'
   /v1/projects/{projectId}/forms/{xmlFormId}/draft.svc/{table}:
     get:
       tags:
@@ -12039,35 +11789,13 @@ paths:
           content:
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "406.1"
-                message: 'Requested format not acceptable; this resource allows: (application/json,
-                  json).'
+                $ref: '#/components/schemas/Error406'
         "501":
           description: Not Implemented
           content:
             application/json:
               schema:
-                required:
-                - code
-                type: object
-                properties:
-                  code:
-                    type: string
-                  message:
-                    type: string
-              example:
-                code: "501.1"
-                message: The requested feature $unsupported is not supported by this
-                  server.
+                $ref: '#/components/schemas/Error501'
   /v1/config/analytics:
     get:
       tags:
@@ -13069,8 +12797,6 @@ components:
       - open
       - closing
       - closed
-    Forms:
-      type: object
     DraftForm:
       allOf:
       - $ref: '#/components/schemas/Form'
@@ -13210,7 +12936,8 @@ components:
           description: The name of the Dataset.
         properties:
           type: array
-          items: {}
+          items:
+            $ref: '#/components/schemas/Property'
           description: All properties of the Dataset.
     DraftDatasetDiff:
       type: object
@@ -13228,7 +12955,8 @@ components:
           description: Whether or not this Dataset is new (will be created by publishing the Draft Form).
         properties:
           type: array
-          items: {}
+          items:
+            $ref: '#/components/schemas/DraftProperty'
           description: All properties of the Dataset.
     Property:
       type: object
