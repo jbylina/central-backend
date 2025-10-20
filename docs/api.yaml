@@ -748,6 +748,8 @@ tags:
     It is not yet possible to modify a Form's XML definition once it is created.
 - name: Individual Form
   x-parent-tag: Form Management
+  description: |-
+    These endpoints operate on a specific `Form` within a Project. They return the metadata for the Form, its XML definition, and artifacts like the XLSX representation or manifest that clients need to download and work with the Form.
 - name: Draft Form
   x-parent-tag: Form Management
   description: |-
