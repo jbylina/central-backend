@@ -1037,6 +1037,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Success'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
   /v1/example2:
     get:
       tags:
@@ -1070,6 +1076,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Success'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
   /v1/key/{appUser}/example3:
     get:
       tags:
@@ -1098,6 +1110,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Success'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
   /v1/sessions/{token}:
     delete:
       tags:
@@ -2180,6 +2198,12 @@ paths:
                 - project.delete
                 createdAt: 2018-01-19T23:58:03.395Z
                 updatedAt: 2018-03-21T12:45:02.312Z
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
   /v1/roles/{id}:
     get:
       tags:
@@ -2217,6 +2241,12 @@ paths:
                 - project.delete
                 createdAt: 2018-01-19T23:58:03.395Z
                 updatedAt: 2018-03-21T12:45:02.312Z
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
   /v1/assignments:
     get:
       tags:
@@ -2441,6 +2471,12 @@ paths:
                 lastSubmission: 2018-04-18T03:04:51.695Z
                 datasets: 2
                 lastEntity: 2023-04-18T03:04:51.695Z
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error401'
     post:
       tags:
       - Projects
@@ -5653,6 +5689,12 @@ paths:
                   type: user
                   updatedAt: 2018-04-18T23:42:11.406Z
                   deletedAt: 2018-04-18T23:42:11.406Z
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error403'
     post:
       tags:
       - Public Access Links
@@ -5848,6 +5890,12 @@ paths:
                 properties:
                 - name: first_name
                   inForm: true
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error403'
   /v1/projects/{projectId}/forms/{xmlFormId}/draft/dataset-diff:
     get:
       tags:
@@ -5890,6 +5938,12 @@ paths:
                 - name: first_name
                   inForm: true
                   isNew: true
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error403'
   /v1/projects/{projectId}/forms/{xmlFormId}/submissions:
     get:
       tags:
@@ -6507,6 +6561,18 @@ paths:
                   <name>Alice</name>
                   <age>32</age>
                 </data>
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error403'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404'
   /v1/projects/{projectId}/forms/{xmlFormId}/submissions/{instanceId}/edit:
     get:
       tags:
@@ -8337,6 +8403,18 @@ paths:
                   <name>Alice</name>
                   <age>32</age>
                 </data>
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error403'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404'
   /v1/projects/{projectId}/forms/{xmlFormId}/draft/submissions/{instanceId}/attachments:
     get:
       tags:
@@ -9975,6 +10053,18 @@ paths:
                     <downloadUrl>https://your.odk.server/v1/projects/7/forms/simple.xml</downloadUrl>
                   </xform>
                 </xforms>
+        "401":
+          description: Unauthorized
+          headers:
+            X-OpenRosa-Version:
+              schema:
+                type: string
+          content:
+            text/xml:
+              example: |
+                <OpenRosaResponse xmlns="http://openrosa.org/http/response" items="0">
+                  <message nature="error">Authentication is required to retrieve the form list.</message>
+                </OpenRosaResponse>
   /v1/projects/{projectId}/submission:
     post:
       tags:
@@ -10287,6 +10377,18 @@ paths:
                     <manifestUrl>https://your.odk.server/v1/test/IeksRu1CNZs7!qjAot2T17dPzkrw9B4iTtpj7OoIJBmXvnHM8z8Ka4QP/projects/7/forms/basic/draft/manifest</manifestUrl>
                   </xform>
                 </xforms>
+        "401":
+          description: Unauthorized
+          headers:
+            X-OpenRosa-Version:
+              schema:
+                type: string
+          content:
+            text/xml:
+              example: |
+                <OpenRosaResponse xmlns="http://openrosa.org/http/response" items="0">
+                  <message nature="error">The draft token provided was not valid.</message>
+                </OpenRosaResponse>
   /v1/test/{token}/projects/{projectId}/forms/{xmlFormId}/draft/submission:
     post:
       tags:
@@ -11061,6 +11163,12 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            text/html:
+              example: |
+                (html markup data)
+        "403":
+          description: Forbidden
           content:
             text/html:
               example: |
