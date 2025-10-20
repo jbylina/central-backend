@@ -1776,7 +1776,7 @@ paths:
                 updatedAt: 2018-04-18T23:42:11.406Z
                 deletedAt: 2018-04-18T23:42:11.406Z
                 email: my.email.address@getodk.org
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 required:
                 - createdAt
@@ -1989,7 +1989,7 @@ paths:
                   token: d1!E2GVHgpr4h9bpxxtqUJ7EVJ1Q$Dusm2RBXg8XyVJMCBCbvyE8cGacxUx3bcUT
                   projectId: 1
                   lastUsed: 2018-04-14T08:34:21.633Z
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 description: Extended App Users
@@ -2270,7 +2270,7 @@ paths:
               example:
               - actorId: 115
                 roleId: 4
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 description: Extended Assignment
@@ -2454,7 +2454,7 @@ paths:
                 description: Description of this Project to show on Central.
                 keyId: 3
                 archived: false
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 description: Extended Response
@@ -2578,7 +2578,7 @@ paths:
                 description: Description of this Project to show on Central.
                 keyId: 3
                 archived: false
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: object
                 description: Extended Response
@@ -2982,7 +2982,7 @@ paths:
               example:
               - actorId: 115
                 roleId: 4
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 items:
@@ -3170,7 +3170,7 @@ paths:
               - actorId: 115
                 xmlFormId: simple
                 roleId: 4
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 items:
@@ -3229,7 +3229,7 @@ paths:
               - actorId: 115
                 xmlFormId: simple
                 roleId: 4
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 items:
@@ -3247,7 +3247,7 @@ paths:
         "403":
           description: Forbidden
           content:
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 $ref: '#/components/schemas/Error403'
   /v1/projects/{projectId}/forms:
@@ -3299,7 +3299,7 @@ paths:
                 publishedAt: 2018-01-21T00:04:11.153Z
                 createdAt: 2018-01-19T23:58:03.395Z
                 updatedAt: 2018-03-21T12:45:02.312Z
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 items:
@@ -3547,7 +3547,7 @@ paths:
                 publishedAt: 2018-01-21T00:04:11.153Z
                 createdAt: 2018-01-19T23:58:03.395Z
                 updatedAt: 2018-03-21T12:45:02.312Z
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 $ref: '#/components/schemas/ExtendedForm'
               example:
@@ -4034,7 +4034,7 @@ paths:
                 type: string
                 description: content version identifier
           content:
-            "{the MIME type of the attachment file itself}":
+            application/octet-stream:
               schema:
                 type: object
               example: (binary data)
@@ -4936,7 +4936,7 @@ paths:
                 publishedAt: 2018-01-21T00:04:11.153Z
                 createdAt: 2018-01-19T23:58:03.395Z
                 updatedAt: 2018-03-21T12:45:02.312Z
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 items:
@@ -4963,7 +4963,7 @@ paths:
         "403":
           description: Forbidden
           content:
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 $ref: '#/components/schemas/Error403'
   /v1/projects/{projectId}/forms/{xmlFormId}/versions/{version}:
@@ -5269,7 +5269,7 @@ paths:
                 type: string
                 description: content version identifier
           content:
-            "{the MIME type of the attachment file itself}":
+            application/octet-stream:
               schema:
                 type: object
               example: (binary data)
@@ -5419,7 +5419,7 @@ paths:
               example:
               - actorId: 115
                 roleId: 4
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 items:
@@ -5436,7 +5436,7 @@ paths:
         "403":
           description: Forbidden
           content:
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 $ref: '#/components/schemas/Error403'
   /v1/projects/{projectId}/forms/{xmlFormId}/assignments/{roleId}:
@@ -5638,7 +5638,7 @@ paths:
                 deletedAt: 2018-04-18T23:42:11.406Z
                 token: d1!E2GVHgpr4h9bpxxtqUJ7EVJ1Q$Dusm2RBXg8XyVJMCBCbvyE8cGacxUx3bcUT
                 once: false
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 items:
@@ -5971,7 +5971,7 @@ paths:
                   userAgent: Enketo/3.0.4
                   createdAt: 2018-01-19T23:58:03.395Z
                   current: true
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 items:
@@ -6003,7 +6003,7 @@ paths:
         "403":
           description: Forbidden
           content:
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 $ref: '#/components/schemas/Error403'
     post:
@@ -6158,7 +6158,7 @@ paths:
                   userAgent: Enketo/3.0.4
                   createdAt: 2018-01-19T23:58:03.395Z
                   current: true
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 $ref: '#/components/schemas/ExtendedSubmission'
               example:
@@ -6975,7 +6975,7 @@ paths:
                 action: form.create
                 acteeId: 85cb9aff-005e-4edd-9739-dc9c1a829c44
                 loggedAt: 2018-04-18T23:19:14.802Z
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 items:
@@ -7134,7 +7134,7 @@ paths:
               example:
               - body: this is my comment
                 actorId: 42
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 items:
@@ -7331,13 +7331,13 @@ paths:
                 type: string
                 description: content version identifier
           content:
-            '{the MIME type of the attachment file itself}':
+            application/octet-stream:
               example: |
                 (binary data)
         "403":
           description: Forbidden
           content:
-            '{the MIME type of the attachment file itself}':
+            application/octet-stream:
               schema:
                 required:
                 - code
@@ -7503,7 +7503,7 @@ paths:
                 createdAt: 2018-01-19T23:58:03.395Z
                 current: true
                 formVersion: "1.0"
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 items:
@@ -7527,7 +7527,7 @@ paths:
         "403":
           description: Forbidden
           content:
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 $ref: '#/components/schemas/Error403'
   /v1/projects/{projectId}/forms/{xmlFormId}/submissions/{instanceId}/versions/{versionId}:
@@ -7587,7 +7587,7 @@ paths:
                 createdAt: 2018-01-19T23:58:03.395Z
                 current: true
                 formVersion: "1.0"
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 $ref: '#/components/schemas/ExtendedSubmissionVersion'
               example:
@@ -7799,13 +7799,13 @@ paths:
                 type: string
                 description: content version identifier
           content:
-            '{the MIME type of the attachment file itself}':
+            application/octet-stream:
               example: |
                 (binary data)
         "403":
           description: Forbidden
           content:
-            '{the MIME type of the attachment file itself}':
+            application/octet-stream:
               schema:
                 required:
                 - code
@@ -7939,7 +7939,7 @@ paths:
                   userAgent: Enketo/3.0.4
                   createdAt: 2018-01-19T23:58:03.395Z
                   current: true
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 items:
@@ -8269,7 +8269,7 @@ paths:
                   userAgent: Enketo/3.0.4
                   createdAt: 2018-01-19T23:58:03.395Z
                   current: true
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 $ref: '#/components/schemas/ExtendedSubmission'
               example:
@@ -8452,13 +8452,13 @@ paths:
               schema:
                 type: string
           content:
-            '{the MIME type of the attachment file itself}':
+            application/octet-stream:
               example: |
                 (binary data)
         "403":
           description: Forbidden
           content:
-            '{the MIME type of the attachment file itself}':
+            application/octet-stream:
               schema:
                 required:
                 - code
@@ -8599,7 +8599,7 @@ paths:
                   projectId: 1
                   approvalRequired: true
                   ownerOnly: false
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 items:
@@ -9004,7 +9004,7 @@ paths:
                   trunkVersion: null
                   branchBaseVersion: null
                   conflictingProperties: null
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 description: Extended Response
@@ -9295,7 +9295,7 @@ paths:
                     firstName: John
                     age: '88'
                     label: John (88)
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 items:
@@ -9628,7 +9628,7 @@ paths:
                     firstName: John
                     age: '88'
                     label: John (88)
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 description: Extended Response
@@ -10514,13 +10514,13 @@ paths:
               schema:
                 type: string
           content:
-            '{the MIME type of the attachment file itself}':
+            application/octet-stream:
               example: |
                 (binary data)
         "403":
           description: Forbidden
           content:
-            '{the MIME type of the attachment file itself}':
+            application/octet-stream:
               schema:
                 required:
                 - code
@@ -12062,7 +12062,7 @@ paths:
                   userAgent: Mozilla/5.0
                 acteeId: 85cb9aff-005e-4edd-9739-dc9c1a829c44
                 loggedAt: 2018-04-18T23:19:14.802Z
-            application/json; extended:
+            application/json; extended=true:
               schema:
                 type: array
                 items:
